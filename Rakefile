@@ -8,7 +8,7 @@ namespace :db do
     Sequel.extension :migration
 	  
 	  config = YAML.load_file("#{Dir.pwd}/config/database.yml")
-    ENV['DATABASE_URL'] = "sqlite://#{Dir.pwd}/notes.db"
+    ENV['DATABASE_URL'] = "jdbc:sqlite://#{Dir.pwd}/notes.db"
 
     task :connect do
       if ENV['DATABASE_URL']
