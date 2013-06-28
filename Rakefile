@@ -1,9 +1,9 @@
+require 'rubygems'
 require 'bundler' 
-Bundler.require(:deploy)
-$:.unshift "./db"
+require 'sequel'
+require 'yaml'
 
 namespace :db do
-  require "sequel"
   namespace :migrate do
     Sequel.extension :migration
 	  
